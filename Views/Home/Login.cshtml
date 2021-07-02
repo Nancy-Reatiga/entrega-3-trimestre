@@ -1,0 +1,39 @@
+﻿@using System.Net;
+@*
+    for more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?Link10=397860
+*@
+@{
+    var returnUrl = ViewData["ReturnUrl"] as string;
+    var error = TempData["Error"] as string;
+
+}
+<h2 class="text-center m-2"> INICIAR SESION </h2>
+
+<div class="col-12 bg-primary d-flex flex-column align-items-center flex-md-row flex-lg-row justify-content-md-center justify-content-lg-center align-items-md-start align-items-lg-start">
+
+    
+
+    <div class="col-12 col-md-6 col-lg-8 bg-white p-3 border rounded m-2">
+         @if (!string.IsNullOrEmpty(error))
+        {
+            <div class="text-danger">@error</div>
+        }
+
+        <form action="/Login?ReturnUrl=@WebUtility.UrlEncode(returnUrl)" method="post">
+            <div class="mb-3">
+                <label class="form-label">Usuario</label>
+                <input type="text" name="username" class="form-control" required>
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Contraseña</label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary"> Iniciar Sesion </button>
+        </form>
+    </div>
+
+</div>
+
+

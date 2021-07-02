@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model App588.Models.Clientes
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h2 class="text-center m-2">Editar Datos De Un Cliente</h2>
+
+<div class="col-12 bg-primary d-flex flex-column align-items-center flex-md-row flex-lg-row justify-content-md-center justify-content-lg-center align-items-md-start align-items-lg-start">
+
+    <div class="col-12 col-md-6 col-lg-3 bg-white p-5 border rounded m-2 d-flex align-items-center justify-content-start">
+        <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" asp-action="Index">Ir a Lista</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-8 bg-white p-3 border rounded m-2">
+        <form asp-action="Editar" class="row g-3 ">
+            <div class="col-md-4">
+                <label class="form-label">Codigo: @Model.Codigo</label>
+                <input asp-for="Codigo" type="hidden" class="form-control">
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Nombre de Usuario</label>
+                <input asp-for="Nombre" type="text" class="form-control" required placeholder="Nombre Apellido">
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Correo</label>
+                <input asp-for="Correo" type="email" class="form-control" required placeholder="usuario@hotmail.com">
+
+            </div>
+
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+
+</div>
